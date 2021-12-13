@@ -1,12 +1,13 @@
 import { faBell, faEnvelope, faPhoneAlt, faSearch, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useDispatch } from 'react-redux';
 import React from 'react';
 import './Navbar.css'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Navbar = () => {
-    
+    const dispatch = useDispatch()
     const {products, totalPrice,totalQuantities} = useSelector(state=>state.CartReducer);
     console.log(products, totalPrice,totalQuantities)
     return (
@@ -28,9 +29,9 @@ const Navbar = () => {
                             <input className="form-control me-2 nav-input" type="search" placeholder="Search" aria-label="Search" />
                             <button className=" nav-button" type="submit"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> </button>
                         </form>
-
+                        {/* dispatch({type:'OPEN_CART',payload: true}) */}
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item navbar-item shadow">
+                            <li className="nav-item navbar-item shadow" onClick={() =>dispatch({type:'OPEN_CART',payload: true})}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-dash" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M5.5 10a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z" />
                                     <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />

@@ -23,15 +23,15 @@ const OrderProceed = () => {
 
             <div className='grid row proceed-main-container'>
 
-                <div className='col-md-6 proceed-item '>
+                <div className='col-md-6 col-12 proceed-item '>
                     <h3 className='mx-5 mt-2 px-3'>Your Order</h3>
                     <div className='mx-5 px-3 my-4 py-2 bg-white shadow rounded proceed-item-three'>
 
                         {
                             products.map(product =>
-                                <div className='d-flex my-1 px-5' key={product._id}>
+                                <div className='d-flex flex-xs-row my-1 px-2  px-xxl-5 px-xl-5 px-md-5 px-sm-5' key={product._id}>
                                     <div>
-                                        <img style={{ height: '150px', width: "150px" }} src={`data:image/jpeg;base64,${product.image.img}`} alt="" />
+                                        <img style={{ height: '150px', width: "150px" }} className='img-fluid' src={`data:image/jpeg;base64,${product.image.img}`} alt="" />
                                     </div>
                                     <div className='mx-3 proceed-item-one'>
                                         <p><small><b>{product.title}</b></small></p>

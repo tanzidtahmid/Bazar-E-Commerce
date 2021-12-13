@@ -28,9 +28,10 @@ export const userContext = createContext()
 
 const App = () => {
   const [signedInUser, setSignedInUser] = useState(userContext);
+  const [cancle, setCancle] = useState(userContext);
 
   return (
-    <userContext.Provider value= { [signedInUser, setSignedInUser] }>
+    <userContext.Provider value= { [signedInUser, setSignedInUser] ,[cancle, setCancle] }>
     <Router>
       <div>
         <Switch>

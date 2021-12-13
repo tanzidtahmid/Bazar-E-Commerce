@@ -3,13 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faPhoneAlt, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react/cjs/react.development';
 import Cart from '../Cart/Cart';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const SingleManPdInfo = ({ productInfo }) => {
     const dispatch = useDispatch()
-
+    
+    const { cart } = useSelector(state => state.CartReducer);
+    console.log(cart)
     const [isTrue, setIsTrue] = useState(false)
-    const [cart, setCart] = useState(false);
+    // const [cart, setCart] = useState(false);
     let [quantity, setQuantity] = useState(1)
     let [pdDetails, setPdDetails] = useState({ color: '', size: '', quantities: quantity })
 
@@ -29,13 +31,14 @@ const SingleManPdInfo = ({ productInfo }) => {
     console.log(pdDetails)
     const addToCart = () =>{
         dispatch({ type: 'ADD_TO_CART', paylod: { productInfo, pdDetails } });
-        setCart(true)
+        dispatch({type:'OPEN_CART',payload: true})
+        
     }
 
     return (
         <div>
             <div>
-                {cart === true && <Cart id={productInfo._id}></Cart>}
+                {cart == true && <Cart id={productInfo._id}></Cart>}
             </div>
             <div className='p-5' style={{ backgroundColor: '#f7f8fa' }}>
                 <div className='row shadow rounded Single-man-pd-container'>
