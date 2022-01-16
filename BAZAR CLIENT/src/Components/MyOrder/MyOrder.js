@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import Sidebar from '../Sidebar/Sidebar';
+import { useHistory } from "react-router-dom";
 
 const MyOrder = () => {
     const [myOrders, setMyOrders] = useState([]);
@@ -11,11 +12,10 @@ const MyOrder = () => {
     }, []);
     const email = localStorage.getItem('email');
     const myOrder = myOrders.filter(mySingleOrder => mySingleOrder.productInfo?.recipientInfoson?.email == email);
-    // console.log(myOrder);
-    myOrder.map(order=>console.log(order.productInfo.recipientInfoson.status))
+    console.log(myOrder);
+    // myOrder.map(order=>console.log(order.productInfo.recipientInfoson.status))
 
-    const handleClick = () =>{
-
+    const handleClick = (id) =>{
     }
 
     return (

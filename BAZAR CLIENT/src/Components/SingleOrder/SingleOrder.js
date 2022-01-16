@@ -14,9 +14,7 @@ const SingleOrder = () => {
         fetch(`http://localhost:5000/singleOrder/${id}`)
         .then(res=>res.json())
         .then(data=>setsingleOrder(data))
-    },[])
-    // const {productInfo} = singleOrder[0];
-    // const  {products, totalQuantities, totalPrice, recipientInfoson, status} =productInfo;
+    },[]);
     console.log(singleOrder)
     return (
         <div className='row pt-4'>
@@ -34,7 +32,7 @@ const SingleOrder = () => {
             {
                 singleOrder.map(product=>
                     <div>
-                        <RecipientInfoson recipientInfoson = {product.productInfo.recipientInfoson}></RecipientInfoson>
+                        <RecipientInfoson recipientInfoson = {product.productInfo.recipientInfoson} id = {id}></RecipientInfoson>
                     </div>
                     )
             }

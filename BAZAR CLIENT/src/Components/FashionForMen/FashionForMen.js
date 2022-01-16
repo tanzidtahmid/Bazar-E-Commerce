@@ -17,8 +17,8 @@ const FashionForMen = () => {
     })
     return (
         <div>
-            <h4>Fashion for Men</h4>
-            <div className='d-flex flex-wrap'>
+            <h4 className='pl-4'>Fashion for Men</h4>
+            <div className='d-flex flex-wrap justify-content-center align-items-cemter'>
                 {
                     productsForMen.map(productForMen=> <ProductForMen key={productForMen._id} productForMen ={productForMen}></ProductForMen> )
                 }

@@ -17,7 +17,7 @@ const OrderList = () => {
     console.log(orderList)
 
     const handleClick = (id) =>{
-        history.push(`/singleOrder/${id}`)
+        history.push(`/OrderEdit/${id}`)
     }
     return (
         <div className='row'>
@@ -36,7 +36,7 @@ const OrderList = () => {
                         <h6>{order.productInfo.recipientInfoson.recipientName}</h6>
                         <h6>{order.productInfo.totalQuantities}</h6>
                         <h6>{order.productInfo.totalPrice}</h6>
-                        <h6>{order.productInfo.status}</h6>
+                        <h6>{order.productInfo.recipientInfoson.status}</h6>
                     </div>)
                 }
             </div>

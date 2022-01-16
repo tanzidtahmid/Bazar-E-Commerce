@@ -23,6 +23,8 @@ import SignUp from './Components/Login/SignUp';
 import MyOrder from './Components/MyOrder/MyOrder'
 import Building from './Components/Building/Building';
 import AllProducts from './Components/AllProducts/AllProducts';
+import Admins from './Components/Admins/Admins';
+import AddAdmin from './Components/Admins/AddAdmin';
 
 export const userContext = createContext()
 
@@ -68,10 +70,10 @@ const App = () => {
           <PrivateRoute path = '/Payment'>
             <Payment></Payment>
           </PrivateRoute>
-          <PrivateRoute path = '/OrderList'>
+          <PrivateRoute path = '/allOrder'>
             <OrderList></OrderList>
           </PrivateRoute>
-          <PrivateRoute path = '/singleOrder/:id'>
+          <PrivateRoute path = '/OrderEdit/:id'>
             <SingleOrder></SingleOrder>
             </PrivateRoute>
           <PrivateRoute path = '/dashboard'>
@@ -79,6 +81,12 @@ const App = () => {
           </PrivateRoute>
           <PrivateRoute path = '/allProducts'>
             <AllProducts></AllProducts>
+          </PrivateRoute>
+          <PrivateRoute path = '/admins'>
+            <Admins></Admins>
+          </PrivateRoute>
+          <PrivateRoute path = '/addAdmin'>
+            <AddAdmin></AddAdmin>
           </PrivateRoute>
 
 

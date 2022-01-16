@@ -15,7 +15,7 @@ const HomeAppliance = () => {
         <div>
             {/* <Navbar></Navbar> */}
             <h4 className='pl-4'>Home Appliance</h4>
-            <div className='d-flex flex-wrap'>
+            <div className='d-flex flex-wrap justify-content-center align-items-cemter'>
                 {
                     homeAppliance.map(productForMen=> <ProductForMen key={productForMen._id} productForMen ={productForMen}></ProductForMen> )
                 }

@@ -36,6 +36,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 client.connect(err => {
   const allPdCollection = client.db("bazar").collection("allProducts");
   const orderedProduct = client.db("bazar").collection("orderedProduct");
+  const admins = client.db("bazar").collection("admins");
 
   app.post('/addProducts', (req, res) => {
     const ProductInfo = req.body;
@@ -136,13 +137,45 @@ client.connect(err => {
       })
   })
 
-  //Product Delete
+  // Product Delete
   app.delete('/deleteProduct/:id', function (req, res) {
     allPdCollection.deleteOne({_id: ObjectID(req.params.id)})
     .then((result)=>{
       console.log(result)
     })
   })
+
+  // Add Admins
+  app.post('/addAdmin',(req,res)=>{
+    console.log(req.body)
+    admins.insertOne(req.body)
+    .then(function(result) {
+      res.send(result.insertedCount > 0)
+    })
+  })
+
+  // Get Admin
+  app.get('/getAdmins',(req,res)=>{
+    admins.find({})
+    .toArray((err,document)=>{
+      res.send(document)
+    })
+  });
+
+  //Update Statuse
+  app.patch('/updateStatuse/:id',  (req, res) => {
+    console.log(req.body)
+
+    orderedProduct.updateOne({ _id: ObjectId(req.params.productId) },
+    {
+      $set: { status : req.body.status,}
+    })
+    .then(result => {
+      res.send(result.modifiedCount > 0)
+      console.log(result)
+    }
+    )
+  });
 
 
 });

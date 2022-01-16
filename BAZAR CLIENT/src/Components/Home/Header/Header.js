@@ -12,8 +12,8 @@ const Header = () => {
         <div>
             <Navbar></Navbar>
             <div className='row header-container pt-2'>
-                <div className='col-md-3 col-sm-0'>
-                    <ul className='ul-items ml-3'>
+                <div className='col-md-3'>
+                    <ul className='ul-items ml-1 ml-sm-1 ml-md-5 ml-xl-5 ml-xxl-5'>
                         <li> <Link to='/building' className='text-dark'> Security Safe </Link> </li>
                         <li> <Link to='/building' className='text-dark'> Home Appliance </Link> </li>
                         <li> <Link to='/building' className='text-dark'> Fashion For Men </Link> </li>
@@ -22,7 +22,7 @@ const Header = () => {
                     </ul>
                 </div>
 
-                <div className=' col-md-9 carousrel-container  col-sm-12'>
+                <div className=' col-md-9 carousrel-container'>
                     <div className = 'carousrel-items'>
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
