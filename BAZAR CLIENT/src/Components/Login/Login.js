@@ -1,14 +1,16 @@
 import React from 'react';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 import firebaseConfig from './firebase.config';
-import '@firebase/auth'
+
 import { userContext } from '../../App';
 import { useContext } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import Navbar from '../Home/Navbar/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Login = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import Navbar from '../Home/Navbar/Navbar';
 import './SingleManPd.css'
 import SingleManPdInfo from './SingleManPdInfo';
@@ -11,12 +11,12 @@ const SingleManPd = () => {
     // console.log(id)
     const [singleManPd, setSingleManPd] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/singleManPd/${id}`)
+        fetch(`https://infinite-hollows-21679.herokuapp.com/singleManPd/${id}`)
             .then(res => res.json())
             .then(data => {
                 setSingleManPd(data)
             })
-    }, [])
+    }, []);
     return (
         <div>
             <Navbar></Navbar>

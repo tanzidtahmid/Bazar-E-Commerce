@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar'
 
 const AllProducts = () => {
     const [allProducts, setAllProducts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/allProducts')
+        fetch('https://infinite-hollows-21679.herokuapp.com/allProducts')
             .then(res => res.json())
             .then(data => setAllProducts(data))
     }, []);
 
     const handleDelete = (id) =>{
-        fetch(`http://localhost:5000/deleteProduct/${id}`,{
+        fetch(`https://infinite-hollows-21679.herokuapp.com/deleteProduct/${id}`,{
             method :'DELETE'
         })
         .then(res=>res.json())

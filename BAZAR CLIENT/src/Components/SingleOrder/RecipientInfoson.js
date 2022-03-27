@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 
 const RecipientInfoson = ({ recipientInfoson,id }) => {
     console.log(recipientInfoson.status)
@@ -14,7 +14,7 @@ const RecipientInfoson = ({ recipientInfoson,id }) => {
 
     const handleDone = (id) =>{
         
-        const url = `http://localhost:5000/updateStatuse/${id}`
+        const url = `https://infinite-hollows-21679.herokuapp.com/updateStatuse/${id}`
         console.log(url)
         fetch(url, {
             method: 'PATCH',

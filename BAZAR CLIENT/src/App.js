@@ -12,7 +12,7 @@ import Home from './Components/Home/Home/Home';
 import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import { createContext } from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import OrderProceed from './Components/OrderProceed/OrderProceed';
 import HomeAppliance from './Components/HomeAppliance/HomeAppliance';
 import ConfrimOrder from './Components/ConfrimOrder/ConfrimOrder';
@@ -33,7 +33,7 @@ const App = () => {
   const [cancle, setCancle] = useState(userContext);
 
   return (
-    <userContext.Provider value= { [signedInUser, setSignedInUser] ,[cancle, setCancle] }>
+    <userContext.Provider value= { [signedInUser, setSignedInUser]  }>
     <Router>
       <div>
         <Switch>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faPhoneAlt, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import Cart from '../Cart/Cart';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -291,7 +291,7 @@ export default SingleManPdInfo;
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCheckSquare, faPhoneAlt, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-// import { useState } from 'react/cjs/react.development';
+// import { useState } from 'react';
 // import { userContext } from '../../App';
 // import { useContext } from 'react';
 // import Cart from '../Cart/Cart';

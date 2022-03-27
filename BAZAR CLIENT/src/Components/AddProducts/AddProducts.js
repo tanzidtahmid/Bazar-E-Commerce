@@ -32,7 +32,7 @@ const AddProducts = () => {
         
         console.log(formData)
         
-        fetch('http://localhost:5000/addProducts',{
+        fetch('https://infinite-hollows-21679.herokuapp.com/addProducts',{
             method : 'POST',
             body : formData
         })

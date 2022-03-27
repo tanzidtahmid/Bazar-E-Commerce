@@ -52,7 +52,7 @@ const SplitCardForm = (props) => {
     const newRecipientInfoson = JSON.parse(jsonRecipientInfoson)
     const recipientInfoson = newRecipientInfoson[0]
 
-    fetch('http://localhost:5000/orderedProduct',{
+    fetch('https://infinite-hollows-21679.herokuapp.com/orderedProduct',{
       
         method: 'POST',
         headers: {

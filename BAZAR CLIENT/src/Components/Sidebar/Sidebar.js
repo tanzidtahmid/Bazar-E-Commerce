@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import './Sidebar.css'
 
 const Sidebar = () => {
@@ -8,7 +8,7 @@ const Sidebar = () => {
     console.log(emailFromLS)
     const [admins, setAdmins] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/getAdmins')
+        fetch('https://infinite-hollows-21679.herokuapp.com/getAdmins')
             .then(res => res.json())
             .then(data => setAdmins(data))
             .catch(err => console.log(err))

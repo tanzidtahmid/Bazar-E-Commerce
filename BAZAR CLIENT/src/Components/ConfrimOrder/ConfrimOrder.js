@@ -1,15 +1,14 @@
 
-import React from 'react';
+import React ,{useContext} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { useContext } from 'react/cjs/react.development';
 import { userContext } from '../../App';
 
 const ConfrimOrder = () => {
-    const [signedInUser, setSignedInUser] = useContext(userContext)
+    const [signedInUser, setSignedInUser] =  useContext(userContext)
     const history = useHistory()
     const email = localStorage.getItem('email')
     const [recipientInfo, setRecipient] = useState(

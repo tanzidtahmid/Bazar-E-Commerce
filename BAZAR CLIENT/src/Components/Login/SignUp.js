@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 import firebaseConfig from './firebase.config';
-import '@firebase/auth'
+
 import Navbar from '../Home/Navbar/Navbar';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';

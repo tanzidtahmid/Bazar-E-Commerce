@@ -1,14 +1,14 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 
 const OrderList = () => {
     const history = useHistory()
     const [orderList, setOrderList] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/orderList")
+        fetch("https://infinite-hollows-21679.herokuapp.com/orderList")
             .then(res => res.json())
             .then(data => setOrderList(data))
     }, [])

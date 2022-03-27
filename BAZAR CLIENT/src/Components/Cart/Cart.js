@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './Cart.css'
 import { faMinus, faPlus, faTrashAlt, faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 
 
 const Cart = (props) => {

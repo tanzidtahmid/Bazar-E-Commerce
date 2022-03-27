@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import { useHistory } from "react-router-dom";
 
 const MyOrder = () => {
     const [myOrders, setMyOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/dashboard')
+        fetch('https://infinite-hollows-21679.herokuapp.com/dashboard')
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, []);

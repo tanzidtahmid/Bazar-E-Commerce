@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import RecipientInfoson from './RecipientInfoson';
 import SingleOrderPd from './SingleOrderPd';
 
@@ -11,7 +11,7 @@ const SingleOrder = () => {
     const [singleOrder,setsingleOrder] = useState([])
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/singleOrder/${id}`)
+        fetch(`https://infinite-hollows-21679.herokuapp.com/singleOrder/${id}`)
         .then(res=>res.json())
         .then(data=>setsingleOrder(data))
     },[]);

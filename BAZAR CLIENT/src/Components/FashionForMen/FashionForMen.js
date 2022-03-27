@@ -1,12 +1,12 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import ProductForMen from '../ProductForMen/ProductForMen';
 
 const FashionForMen = () => {
     const [productsForMen, setProductsForMen] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/fashionForMen')
+        fetch('https://infinite-hollows-21679.herokuapp.com/fashionForMen')
         .then(res=>res.json())
         .then(data=>{
             setProductsForMen(data)

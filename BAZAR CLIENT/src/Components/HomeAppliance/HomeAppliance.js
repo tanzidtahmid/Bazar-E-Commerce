@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import Navbar from '../Home/Navbar/Navbar';
 import ProductForMen from '../ProductForMen/ProductForMen';
 
 const HomeAppliance = () => {
     const [homeAppliance, setHomeAppliance] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/homeAppliance')
+        fetch('https://infinite-hollows-21679.herokuapp.com/homeAppliance')
         .then(res=>res.json())
         .then(data=>setHomeAppliance(data))
     },[])

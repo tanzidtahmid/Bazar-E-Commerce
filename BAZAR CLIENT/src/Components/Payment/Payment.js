@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faApple, faAws, faCcPaypal, faPaypal } from '@fortawesome/free-brands-svg-icons';
 import './Payment.css'
 import { useSelector } from 'react-redux';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';

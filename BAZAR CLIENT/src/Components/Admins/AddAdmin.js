@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 
 const AddAdmin = () => {
@@ -13,7 +13,7 @@ const AddAdmin = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         console.log(admin)
-        fetch('http://localhost:5000/addAdmin',{
+        fetch('https://infinite-hollows-21679.herokuapp.com/addAdmin',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
